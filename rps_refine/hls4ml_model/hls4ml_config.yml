@@ -1,0 +1,90 @@
+Backend: Vivado
+ClockPeriod: 5
+HLSConfig:
+  LayerName:
+    activation:
+      Precision:
+        result: fixed<16,6>
+      Strategy: Stable
+      Trace: false
+    conv2d1:
+      Precision:
+        bias: fixed<7,2>
+        result: fixed<16,6>
+        weight: fixed<7,2>
+      Trace: false
+    conv2d1_input:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    conv2d1_linear:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    conv2d2:
+      Precision:
+        bias: fixed<7,2>
+        result: fixed<16,6>
+        weight: fixed<7,2>
+      Trace: false
+    conv2d2_linear:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    fc1:
+      Precision:
+        bias: fixed<7,2>
+        result: fixed<16,6>
+        weight: fixed<7,2>
+      Trace: false
+    fc1_linear:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    fc2:
+      Precision:
+        bias: fixed<7,2>
+        result: fixed<16,6>
+        weight: fixed<7,2>
+      Trace: false
+    fc2_linear:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    flatten:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    max_pooling2d:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    max_pooling2d_1:
+      Precision:
+        result: fixed<16,6>
+      Trace: false
+    relu1:
+      Precision:
+        result: ufixed<7,0,RND_CONV,SAT>
+      Trace: false
+    relu2:
+      Precision:
+        result: ufixed<7,0,RND_CONV,SAT>
+      Trace: false
+    relu3:
+      Precision:
+        result: ufixed<7,0,RND_CONV,SAT>
+      Trace: false
+  Model:
+    BramFactor: 1000000000
+    Precision: ap_fixed<7,1>
+    ReuseFactor: 32
+    Strategy: Latency
+    TraceOutput: false
+IOType: io_stream
+KerasModel: !keras_model 'hls4ml_model//keras_model.h5'
+OutputDir: hls4ml_model/
+Part: xc7z020clg400-1
+ProjectName: myproject
+Stamp: 6e6cA41e
+XilinxPart: xc7z020clg400-1
